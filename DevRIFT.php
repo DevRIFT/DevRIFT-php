@@ -8,13 +8,13 @@ namespace DevRIFT;
 class DevRIFT
 {
     /** @var string The base URL for the DevRIFT API. */
-    const BASE_URL = 'https://api.devrift.co/';
+    public const BASE_URL = 'https://api.devrift.co/';
 
     /** @var int VERIFY Constant */
-    const VERIFY = 0;
+    public const VERIFY = 0;
 
     /** @var int TEST Constant */
-    const TEST = 1;
+    public const TEST = 1;
 
     /** @var string The Publisher API Key to be used for requests. */
     public static $publisherKey;

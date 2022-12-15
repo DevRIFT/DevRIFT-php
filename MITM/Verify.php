@@ -5,7 +5,7 @@ namespace DevRIFT\MITM;
 class MITM
 {
     // Define the algorithm used for signing messages
-    const SIGNATURE_ALGORITHM = 'sha256';
+    public const SIGNATURE_ALGORITHM = 'sha256';
 
     /**
      * The client's public key
