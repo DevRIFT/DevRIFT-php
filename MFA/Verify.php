@@ -17,14 +17,14 @@ class MFA
         $this->secretKey = DevRIFT::getSecretKey();
     }
 
-    public static function Verify($MfaCode, $user_contact)
+    public function Verify($MfaCode, $user_contact)
     {
         $data = array(
             'api-type' => 'mfa_verify',
             'mfa_code' => $MfaCode,
             'user_contact' => $user_contact,
-            'rift_pk' => self::$publisherKey,
-            'rift_sk' => self::$secretKey
+            'rift_pk' => $this->publisherKey,
+            'rift_sk' => $this->secretKey
         );
 
         // Use the ApiRequestor class to send the data to the API

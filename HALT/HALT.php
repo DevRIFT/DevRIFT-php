@@ -17,12 +17,12 @@ class HALT
 		$this->secretKey = DevRIFT::getSecretKey();
 	}
 
-	public static function process()
+	public function process()
 	{
 		$data = array(
 			'api-type' => 'halt_check',
-			'rift_pk' => self::$publisherKey,
-			'rift_sk' => self::$secretKey
+			'rift_pk' => $this->publisherKey,
+			'rift_sk' => $this->secretKey
 		);
 
 		// Use the ApiRequestor class to send the data to the API

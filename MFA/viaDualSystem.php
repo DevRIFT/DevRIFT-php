@@ -17,7 +17,7 @@ class MFA
         $this->secretKey = DevRIFT::getSecretKey();
     }
 
-    public static function viaDualSystem($phone_number, $email)
+    public function viaDualSystem($phone_number, $email)
     {
         $phone_number = filter_var($phone_number, FILTER_SANITIZE_NUMBER_INT);
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
@@ -26,8 +26,8 @@ class MFA
             'api-type' => 'mfa_create_dual',
             'phone_number' => $phone_number,
             'email' => $email,
-            'rift_pk' => self::$publisherKey,
-            'rift_sk' => self::$secretKey
+            'rift_pk' => $this->publisherKey,
+            'rift_sk' => $this->secretKey
         );
 
         if ((new \DevRIFT\ApiRequestor())->request($data) === false) {
