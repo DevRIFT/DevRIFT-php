@@ -4,7 +4,7 @@ namespace DevRIFT;
 
 abstract class WebhookSignature
 {
-    const EXPECTED_SCHEME = 'v0';
+    public const EXPECTED_SCHEME = 'v0';
 
     /**
      * Header Form Expected: t=[TIMESTAMP], [SIGNATURE_SCHEME]=[SIGNATURE]

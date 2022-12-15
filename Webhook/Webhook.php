@@ -20,7 +20,7 @@ namespace DevRIFT;
 
 abstract class Webhook
 {
-    const DEFAULT_TOLERANCE = 300;
+    public const DEFAULT_TOLERANCE = 300;
 
     protected $secretKey;
 
