@@ -10,14 +10,13 @@ class MFA
 
     protected $secretKey;
 
-    // constructor
     public function __construct()
     {
         $this->publisherKey = DevRIFT::getPublisherKey();
         $this->secretKey = DevRIFT::getSecretKey();
     }
 
-    public function Verify($MfaCode, $user_contact)
+    public function validateCode($MfaCode, $user_contact)
     {
         $data = array(
             'api-type' => 'mfa_verify',
