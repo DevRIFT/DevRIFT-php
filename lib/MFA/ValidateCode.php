@@ -19,7 +19,7 @@ class MFA
     public function validateCode($MfaCode, $user_contact)
     {
         $data = array(
-            'api-type' => 'mfa_verify',
+            'api_type' => 'mfa_verify',
             'mfa_code' => $MfaCode,
             'user_contact' => $user_contact,
             'rift_pk' => $this->publisherKey,

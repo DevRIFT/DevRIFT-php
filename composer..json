@@ -1,0 +1,23 @@
+{
+    "name": "DevRIFT/DevRIFT-php",
+    "description": "DevRIFT API PHP Library",
+    "type": "library",
+    "version": "0.0.2",
+    "require": {
+        "php": ">=7.4.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "DevRIFT and contributors",
+            "homepage": "https://github.com/DevRIFT/DevRIFT-php/contributors",
+            "email": "support@devrift.co"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "DevRIFT\\": "lib/"
+        }
+    }
+}

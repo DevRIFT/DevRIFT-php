@@ -1,11 +1,11 @@
 <?php
 
-namespace DevRIFT\Activation;
+namespace DevRIFT\Magic;
 
 use DevRIFT\DevRIFT;
 use DevRIFT\Exception;
 
-class Activation
+class Make
 {
     private static $publisherKey = null;
     private static $secretKey = null;
@@ -16,7 +16,7 @@ class Activation
         self::$secretKey = DevRIFT::getSecretKey();
     }
 
-    public static function request($email)
+    public static function magic($email)
     {
         // Check if the email is valid
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -25,7 +25,7 @@ class Activation
 
         // Create a data array with the GET parameters and email
         $data = array(
-            'api-type' => 'activation_create',
+            'api_type' => 'magic_create',
             'email' => $email,
             'rift_pk' => self::$publisherKey,
             'rift_sk' => self::$secretKey

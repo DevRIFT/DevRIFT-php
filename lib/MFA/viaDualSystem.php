@@ -17,13 +17,15 @@ class MFA
         $this->secretKey = DevRIFT::getSecretKey();
     }
 
-    public function viaSMS($phone_number)
+    public function viaDualSystem($phone_number, $email)
     {
         $phone_number = filter_var($phone_number, FILTER_SANITIZE_NUMBER_INT);
+        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
         $data = array(
-            'api-type' => 'mfa_create_sms',
+            'api_type' => 'mfa_create_dual',
             'phone_number' => $phone_number,
+            'email' => $email,
             'rift_pk' => $this->publisherKey,
             'rift_sk' => $this->secretKey
         );

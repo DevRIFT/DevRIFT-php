@@ -28,7 +28,7 @@ class Debug
             array_merge(
                 $keys,
                 array(
-                    'api-type' => 'debug_keys'
+                    'api_type' => 'debug_keys'
                 )
             );
             if ((new ApiRequestor())->request($keys)) {

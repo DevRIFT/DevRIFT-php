@@ -20,7 +20,7 @@ class HALT
 	public function process()
 	{
 		$data = array(
-			'api-type' => 'halt_check',
+			'api_type' => 'halt_check',
 			'rift_pk' => $this->publisherKey,
 			'rift_sk' => $this->secretKey
 		);

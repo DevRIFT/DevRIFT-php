@@ -21,7 +21,7 @@ class MFA
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
         $data = array(
-            'api-type' => 'mfa_create_email',
+            'api_type' => 'mfa_create_email',
             'email' => $email,
             'rift_pk' => $this->publisherKey,
             'rift_sk' => $this->secretKey

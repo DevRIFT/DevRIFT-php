@@ -45,7 +45,7 @@ class MITM
     {
         // Create a data array with the GET parameters and email
         $data = array(
-            'api-type' => 'mitm_verify',
+            'api_type' => 'mitm_verify',
             'payload' => $payload,
             'signature' => $signature,
             'public_key' => $this->publicKey,

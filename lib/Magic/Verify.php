@@ -30,9 +30,9 @@ class Verify
 
         // Create a data array with the GET parameters and email
         $data = array(
-            'api-type' => 'magic',
-            'token' => $_GET['RIFT_Token'],
-            'selector' => $_GET['RIFT_Selector'],
+            'api_type' => 'magic',
+            'vl' => $_GET['RIFT_Token'],
+            'sr' => $_GET['RIFT_Selector'],
             'email' => $email,
             'rift_pk' => self::$publisherKey,
             'rift_sk' => self::$secretKey
