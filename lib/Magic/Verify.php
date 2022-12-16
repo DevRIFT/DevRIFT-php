@@ -16,23 +16,23 @@ class Verify
         self::$secretKey = DevRIFT::getSecretKey();
     }
 
-    public static function magic($email)
+    public static function magic($email, $token = $_GET['vl'], $selector = $_GET['sr'])
     {
         // Check if the email is valid
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             throw new Exception\InvalidArgumentException("Invalid email address");
         }
 
-        // check if $_GET['RIFT_Token'] and $_GET['RIFT_Selector'] is set
-        if (!isset($_GET['RIFT_Token']) || !isset($_GET['RIFT_Selector'])) {
-            throw new Exception\InvalidArgumentException("RIFT_Token or RIFT_Selector is not set");
+        // check if token and selector are defined
+        if (!isset($token) || !isset($selector)) {
+            throw new Exception\InvalidArgumentException("Invalid token or selector");
         }
 
         // Create a data array with the GET parameters and email
         $data = array(
             'api_type' => 'magic',
-            'vl' => $_GET['RIFT_Token'],
-            'sr' => $_GET['RIFT_Selector'],
+            'vl' => $token,
+            'sr' => $selector,
             'email' => $email,
             'rift_pk' => self::$publisherKey,
             'rift_sk' => self::$secretKey
