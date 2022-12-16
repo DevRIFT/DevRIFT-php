@@ -39,6 +39,12 @@ class Verify
         );
 
         // Use the ApiRequestor class to send the data to the API
-        return (new \DevRIFT\ApiRequestor())->request($data);
+        $response = (new \DevRIFT\ApiRequestor())->requestReturn($data);
+
+        if (!isset($response['success']['email'])) {
+            throw new Exception\InvalidRequestException("The Activation Tokens are invalid");
+        }
+
+        return $response['success']['email'];
     }
 }
