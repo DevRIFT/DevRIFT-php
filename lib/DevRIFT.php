@@ -46,16 +46,37 @@ class DevRIFT
         );
     }
 
+    /**
+     * getPublisherKey
+     * 
+     * Get the Publisher API Key.
+     * 
+     * @return string
+     */
     public static function getPublisherKey()
     {
         return self::$publisherKey;
     }
 
+    /**
+     * getSecretKey
+     * 
+     * Get the Secret API Key.
+     * 
+     * @return string
+     */
     public static function getSecretKey()
     {
         return self::$secretKey;
     }
 
+    /**
+     * getApiBase
+     * 
+     * Get the base URL for the API.
+     * 
+     * @return string
+     */
     public static function getApiBase()
     {
         return self::BASE_URL;

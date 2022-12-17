@@ -2,6 +2,11 @@
 
 namespace DevRIFT;
 
+/**
+ * Webhook Signature Class
+ * 
+ * Class to verify webhook signatures.
+ */
 abstract class WebhookSignature
 {
     /**

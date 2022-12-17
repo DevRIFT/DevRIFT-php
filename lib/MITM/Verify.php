@@ -2,6 +2,11 @@
 
 namespace DevRIFT\MITM;
 
+/**
+ * MITM Class
+ * 
+ * This class is used to validate the authenticity of the client using their digital signature
+ */
 class MITM
 {
     // Define the algorithm used for signing messages

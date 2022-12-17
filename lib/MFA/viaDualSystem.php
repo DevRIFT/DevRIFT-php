@@ -11,6 +11,12 @@ use DevRIFT\DevRIFT;
  */
 class MFA
 {
+    /**
+     * Summary of viaDualSystem
+     * @param mixed $phone_number
+     * @param mixed $email
+     * @return bool
+     */
     public static function viaDualSystem($phone_number, $email)
     {
         $phone_number = filter_var($phone_number, FILTER_SANITIZE_NUMBER_INT);
