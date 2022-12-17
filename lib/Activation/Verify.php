@@ -12,15 +12,6 @@ use DevRIFT\Exception;
  */
 class Activation
 {
-    private static $publisherKey = null;
-    private static $secretKey = null;
-
-    public function __construct()
-    {
-        self::$publisherKey = DevRIFT::getPublisherKey();
-        self::$secretKey = DevRIFT::getSecretKey();
-    }
-
     public static function verify($token = $_GET['vl'], $selector = $_GET['sr'])
     {
 
@@ -34,8 +25,8 @@ class Activation
             'api_type' => 'activation_verify',
             'vl' => $token,
             'sr' => $selector,
-            'rift_pk' => self::$publisherKey,
-            'rift_sk' => self::$secretKey
+            'rift_pk' => DevRIFT::getPublisherKey(),
+            'rift_sk' => DevRIFT::getSecretKey()
         );
 
         // Use the ApiRequestor class to send the data to the API
