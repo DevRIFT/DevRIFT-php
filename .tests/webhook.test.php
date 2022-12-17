@@ -16,6 +16,8 @@ $secret = 'my_secret';
 $event = Webhook::constructEvent($payload, $sigHeader, $secret);
 if ($event === false) {
     // Signature is invalid
+    echo "invalid";
 } else {
     // Signature is valid
+    echo "valid";
 }
