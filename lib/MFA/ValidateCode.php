@@ -6,24 +6,14 @@ use DevRIFT\DevRIFT;
 
 class MFA
 {
-    protected $publisherKey;
-
-    protected $secretKey;
-
-    public function __construct()
-    {
-        $this->publisherKey = DevRIFT::getPublisherKey();
-        $this->secretKey = DevRIFT::getSecretKey();
-    }
-
-    public function validateCode($MfaCode, $user_contact)
+    public static function validateCode($MfaCode, $user_contact)
     {
         $data = array(
             'api_type' => 'mfa_verify',
             'mfa_code' => $MfaCode,
             'user_contact' => $user_contact,
-            'rift_pk' => $this->publisherKey,
-            'rift_sk' => $this->secretKey
+            'rift_pk' => DevRIFT::getPublisherKey(),
+            'rift_sk' => DevRIFT::getSecretKey()
         );
 
         // Use the ApiRequestor class to send the data to the API

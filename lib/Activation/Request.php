@@ -12,8 +12,8 @@ class Activation
 
     public function __construct()
     {
-        self::$publisherKey = DevRIFT::getPublisherKey();
-        self::$secretKey = DevRIFT::getSecretKey();
+        $this->publisherKey = DevRIFT::getPublisherKey();
+        $this->secretKey = DevRIFT::getSecretKey();
     }
 
     public static function request($email)

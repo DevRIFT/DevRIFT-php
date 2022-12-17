@@ -46,6 +46,5 @@ class Activation
         }
 
         return $response['success']['email'];
-
     }
 }

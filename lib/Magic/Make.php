@@ -7,15 +7,6 @@ use DevRIFT\Exception;
 
 class Make
 {
-    private static $publisherKey = null;
-    private static $secretKey = null;
-
-    public function __construct()
-    {
-        self::$publisherKey = DevRIFT::getPublisherKey();
-        self::$secretKey = DevRIFT::getSecretKey();
-    }
-
     public static function magic($email)
     {
         // Check if the email is valid
@@ -27,11 +18,11 @@ class Make
         $data = array(
             'api_type' => 'magic_create',
             'email' => $email,
-            'rift_pk' => self::$publisherKey,
-            'rift_sk' => self::$secretKey
+            'rift_pk' => DevRIFT::getPublisherKey(),
+            'rift_sk' => DevRIFT::getSecretKey()
         );
 
         // Use the ApiRequestor class to send the data to the API
-        return (new \DevRIFT\ApiRequestor())->request($data);
+        return (new \DevRIFT\ApiRequestor())->requestReturn($data);
     }
 }
