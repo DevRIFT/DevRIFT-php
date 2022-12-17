@@ -14,7 +14,7 @@ DevRIFT::setApiKeys("this", "this");
 Activation::request('test@nerverift.com');
 
 // Usage: Activation::verify();
-$email = Activation::verify()['email'];
+$email = Activation::verify('test@nerverift.com');
 
 // What next?
 
