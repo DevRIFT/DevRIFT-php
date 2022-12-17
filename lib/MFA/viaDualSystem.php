@@ -4,6 +4,11 @@ namespace DevRIFT\MFA;
 
 use DevRIFT\DevRIFT;
 
+/**
+ * MFA Dual System Class
+ * 
+ * This class is used to create a dual system MFA code.
+ */
 class MFA
 {
     public static function viaDualSystem($phone_number, $email)

@@ -6,12 +6,18 @@ use DevRIFT\DevRIFT;
 use DevRIFT\Exception;
 
 /**
- * Summary of Activation
- * 
- * @return string Returns the email address of the user
+ * Activation Class
  */
 class Activation
 {
+    /**
+     * Verify the activation tokens
+     * @param string $token
+     * @param string $selector
+     * @throws Exception\InvalidArgumentException 
+     * @throws Exception\InvalidRequestException 
+     * @return string Returns the email address of the user
+     */
     public static function verify($token = $_GET['vl'], $selector = $_GET['sr'])
     {
 

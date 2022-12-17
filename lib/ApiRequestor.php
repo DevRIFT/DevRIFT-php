@@ -7,13 +7,30 @@ namespace DevRIFT;
  */
 class ApiRequestor
 {
+	/**
+	 * @var string $apiBase
+	 */
 	protected $apiBase;
 
+	/**
+	 * ApiRequestor constructor.
+	 */
 	public function __construct()
 	{
 		$this->apiBase = DevRIFT::getApiBase();
 	}
 
+	/**
+	 * Function request.
+	 * 
+	 * This function is used to send a request to the DevRIFT API.
+	 * 
+	 * Returns true if the HTTP response code is 200, false otherwise.
+	 * 
+	 * @param $data
+	 *
+	 * @return bool
+	 */
 	public function request($data)
 	{
 		// Use cURL to send the data to the API
@@ -33,6 +50,17 @@ class ApiRequestor
 		return $httpCode === 200;
 	}
 
+	/**
+	 * Function requestReturn.
+	 * 
+	 * This function is used to send a request to the DevRIFT API.
+	 * 
+	 * Returns the response from the API.
+	 * 
+	 * @param $data
+	 *
+	 * @return mixed
+	 */
 	public function requestReturn($data)
 	{
 		// Use cURL to send the data to the API
@@ -46,6 +74,17 @@ class ApiRequestor
 		return $response;
 	}
 
+	/**
+	 * Function requestCode.
+	 * 
+	 * This function is used to send a request to the DevRIFT API.
+	 * 
+	 * Returns the HTTP Code from the API.
+	 * 
+	 * @param $data
+	 *
+	 * @return int
+	 */
 	public function requestCode($data)
 	{
 		// Use cURL to send the data to the API

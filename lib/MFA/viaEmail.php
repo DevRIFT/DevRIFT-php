@@ -4,8 +4,18 @@ namespace DevRIFT\MFA;
 
 use DevRIFT\DevRIFT;
 
+/**
+ * MFA Email Class
+ * 
+ * This class is used to create an email MFA code.
+ */
 class MFA
 {
+    /**
+     * Summary of viaEmail
+     * @param mixed $email
+     * @return bool
+     */
     public static function viaEmail($email)
     {
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);

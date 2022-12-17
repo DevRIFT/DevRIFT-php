@@ -4,6 +4,9 @@ namespace DevRIFT;
 
 abstract class WebhookSignature
 {
+    /**
+     * Expected scheme for signatures.
+     */
     public const EXPECTED_SCHEME = 'v0';
 
     /**

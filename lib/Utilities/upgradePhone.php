@@ -4,8 +4,18 @@ namespace DevRIFT\Utilities;
 
 use DevRIFT\Exception\InvalidArgumentException;
 
+/**
+ * Utilities Upgrade Phone Class
+ * 
+ * This class is used to upgrade a phone number to the international format.
+ */
 class Utilities
 {
+    /**
+     * Summary of upgradePhone
+     * @param mixed $phone
+     * @return string
+     */
     public static function upgradePhone($phone)
     {
         $phone = preg_replace('/[^0-9+]/', '', $phone);

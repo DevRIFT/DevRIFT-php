@@ -4,8 +4,18 @@ namespace DevRIFT\MFA;
 
 use DevRIFT\DevRIFT;
 
+/**
+ * MFA SMS Class
+ * 
+ * This class is used to create an SMS MFA code.
+ */
 class MFA
 {
+    /**
+     * Summary of viaSMS
+     * @param mixed $phone_number
+     * @return bool
+     */
     public static function viaSMS($phone_number)
     {
         $phone_number = filter_var($phone_number, FILTER_SANITIZE_NUMBER_INT);

@@ -5,8 +5,18 @@ namespace DevRIFT\Magic;
 use DevRIFT\DevRIFT;
 use DevRIFT\Exception;
 
+/**
+ * Magic Make Class
+ * This class is used to create a magic link for a user.
+ */
 class Make
 {
+    /**
+     * Summary of magic
+     * @param mixed $email
+     * @return mixed
+     * @throws Exception\InvalidArgumentException
+     */
     public static function magic($email)
     {
         // Check if the email is valid

@@ -5,9 +5,20 @@ namespace DevRIFT\Magic;
 use DevRIFT\DevRIFT;
 use DevRIFT\Exception;
 
+/**
+ * Magic Verify Class
+ * 
+ * This class is used to verify a magic link
+ */
 class Verify
 {
-
+    /**
+     * Summary of magic
+     * @param mixed $email
+     * @return mixed
+     * @throws Exception\InvalidArgumentException
+     * @throws Exception\InvalidRequestException
+     */
     public static function magic($email)
     {
         $token = $_GET['vl'];

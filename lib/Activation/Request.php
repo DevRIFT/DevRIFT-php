@@ -5,8 +5,18 @@ namespace DevRIFT\Activation;
 use DevRIFT\DevRIFT;
 use DevRIFT\Exception;
 
+/**
+ * Activation Class
+ */
 class Activation
 {
+    /**
+     * Request an activation email
+     * 
+     * @param string $email The email address of the user
+     * 
+     * @return bool Returns true if the email was sent, false otherwise
+     */
     public static function request($email)
     {
         // Check if the email is valid

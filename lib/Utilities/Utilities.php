@@ -2,11 +2,19 @@
 
 namespace DevRIFT\Utilities;
 
+/**
+ * Utilities Class
+ */
 abstract class Utilities
 {
     private static $isHashEqualsAvailable = null;
 
-
+    /**
+     * Summary of secureCompare
+     * @param mixed $a
+     * @param mixed $b
+     * @return bool
+     */
     public static function secureCompare($a, $b)
     {
         if (null === self::$isHashEqualsAvailable) {

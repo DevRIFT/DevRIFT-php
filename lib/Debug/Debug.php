@@ -6,6 +6,9 @@ use DevRIFT\DevRIFT;
 use DevRIFT\Exception;
 use DevRIFT\ApiRequestor;
 
+/**
+ * Debug Class
+ */
 class Debug
 {
     /**

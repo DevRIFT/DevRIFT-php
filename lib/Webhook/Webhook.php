@@ -18,17 +18,40 @@ if ($event === false) {
 
 namespace DevRIFT;
 
+/**
+ * Webhook Class
+ */
 abstract class Webhook
 {
+    /**
+     * Summary of DEFAULT_TOLERANCE
+     * @var int
+     */
     public const DEFAULT_TOLERANCE = 300;
 
+    /**
+     * Summary of secretKey
+     * @var string
+     */
     protected $secretKey;
 
+    /**
+     * Summary of __construct
+     * Gets the secret key from DevRIFT class and sets it to the protected variable
+     */
 	public function __construct()
 	{
 		$this->secretKey = DevRIFT::getSecretKey();
 	}
 
+    /**
+     * Summary of constructEvent
+     * @param mixed $payload
+     * @param mixed $sigHeader
+     * @param mixed $secret
+     * @param mixed $tolerance
+     * @return bool
+     */
     public static function constructEvent($payload, $sigHeader, $secret = $this->secretKey, $tolerance = self::DEFAULT_TOLERANCE)
     {
         WebhookSignature::verifyHeader($payload, $sigHeader, $secret, $tolerance);

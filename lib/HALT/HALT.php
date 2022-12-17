@@ -5,8 +5,15 @@ namespace DevRIFT\HALT;
 use DevRIFT\DevRIFT;
 use DevRIFT\Exception\HALTException;
 
+/**
+ * HALT Class
+ */
 class HALT
 {
+	/**
+	 * Summary of process
+	 * @throws HALTException
+	 */
 	public static function process()
 	{
 		$data = array(
