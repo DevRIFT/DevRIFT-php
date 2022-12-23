@@ -19,19 +19,20 @@ class Verify
      * @throws Exception\InvalidArgumentException
      * @throws Exception\InvalidRequestException
      */
-    public static function magic($email)
+    public static function magic()
     {
+        if (!isset($_GET['vl']) || !isset($_GET['sr'])) {
+            return false;
+            //throw new Exception\InvalidArgumentException("No Validator or Selector provided.");
+        }
+        
         $token = $_GET['vl'];
         $selector = $_GET['sr'];
 
-        // Check if the email is valid
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            throw new Exception\InvalidArgumentException("Invalid email address");
-        }
-
         // check if token and selector are defined
         if (!isset($token) || !isset($selector)) {
-            throw new Exception\InvalidArgumentException("Invalid token or selector");
+            return false;
+            //throw new Exception\InvalidArgumentException("Invalid token or selector");
         }
 
         // Create a data array with the GET parameters and email
@@ -39,7 +40,6 @@ class Verify
             'api_type' => 'magic_verify',
             'vl' => $token,
             'sr' => $selector,
-            'email' => $email,
             'rift_pk' => DevRIFT::getPublisherKey(),
             'rift_sk' => DevRIFT::getSecretKey()
         );
@@ -50,7 +50,8 @@ class Verify
         if (isset($response['success']) && isset($response['success']['email'])) {
             return $response['success']['email'];
         } else {
-            throw new Exception\InvalidRequestException("The Activation Tokens are invalid");
+            return false;
+            //throw new Exception\InvalidRequestException("The Activation Tokens are invalid");
         }
 
     }

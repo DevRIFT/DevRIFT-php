@@ -8,13 +8,18 @@ namespace DevRIFT;
 class DevRIFT
 {
     /** @var string The base URL for the DevRIFT API. */
-    public const BASE_URL = 'https://api.devrift.co/';
+    public const BASE_URL = 'https://api.devrift.dev/';
+    // FIXME: Change this to https://api.devrift.co/ before release
 
     /** @var int VERIFY Constant */
     public const VERIFY = 0;
+    // FIXME: This feature may not be implemented in the first release
+    // Hence, this constant may be removed
 
     /** @var int TEST Constant */
     public const TEST = 1;
+    // FIXME: This feature may not be implemented in the first release
+    // Hence, this constant may be removed
 
     /** @var string The Publisher API Key to be used for requests. */
     public static $publisherKey;
