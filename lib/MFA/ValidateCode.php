@@ -28,10 +28,10 @@ class MFA
         );
 
         // Use the ApiRequestor class to send the data to the API
-        if ((new \DevRIFT\ApiRequestor())->request($data) === false) {
-            return false;
+        if ((new \DevRIFT\ApiRequestor())->request($data) === true) {
+            return true;
         }
-        return true;
+        return false;
     }
 
 }

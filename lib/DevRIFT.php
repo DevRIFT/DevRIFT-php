@@ -8,8 +8,7 @@ namespace DevRIFT;
 class DevRIFT
 {
     /** @var string The base URL for the DevRIFT API. */
-    public const BASE_URL = 'https://api.devrift.dev/';
-    // FIXME: Change this to https://api.devrift.co/ before release
+    public const BASE_URL = 'https://api.devrift.co/';
 
     /** @var int VERIFY Constant */
     public const VERIFY = 0;
